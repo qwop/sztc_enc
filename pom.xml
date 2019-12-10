@@ -10,7 +10,7 @@
 
     <name>sztc_enc</name>
     <url>https://jkjc.szsctc.cn/</url>
-
+    <description>sz sctc enc for monitor device sn</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
