@@ -23,7 +23,7 @@ jobs:
        restore-keys: |
         ${{ runner.os }}-maven-
     - name: maven进行打包
-      run: mvn -Pprod package  -f pom.xml -U -B  -T 1C -Dmaven.test.skip=true -Dmaven.compile.fork=true
+      run: mvn -Prelease package  -f pom.xml -U -B  -T 1C -Dmaven.test.skip=true -Dmaven.compile.fork=true
 
     - name: 上传发布文件
       uses: svenstaro/upload-release-action@v1-release
@@ -31,6 +31,6 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: ./target/sctc_enc-1.0-SNAPSHOT.jar
         asset_name: sctc_enc-1.0-SNAPSHOT.jar
-        tag: ${{ github.ref }}
+        # tag: ${{ github.ref }}
         overwrite: true       
        
