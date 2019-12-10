@@ -33,11 +33,12 @@ public class App
         return app;
     }
 
-    public KeyModel key() throws UnsupportedEncodingException {
+    public KeyModel key(final String sn ) throws UnsupportedEncodingException {
         byte[] key = SecureUtil.generateKey(SymmetricAlgorithm.AES.getValue()).getEncoded();
         KeyModel keyModel = new KeyModel();
         keyModel.setKey(key);
         keyModel.setKeyStr(new String(key, Const.DEFAULT_CHARSET));
+        keyModel.setSn(sn);
         return keyModel;
     }
 

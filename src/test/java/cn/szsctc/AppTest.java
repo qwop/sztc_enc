@@ -28,8 +28,10 @@ public class AppTest
     @Test
     public void testEnc() throws UnsupportedEncodingException {
         App app = App.instance();
+        // 原始数据
         byte[] data = "data".getBytes("utf-8");
-        byte[] encData = app.enc( app.key(), data );
+        // 设备编号获取密钥进行加密
+        byte[] encData = app.enc( app.key( "SN001"), data );
     }
 
 
