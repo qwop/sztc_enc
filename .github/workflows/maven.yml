@@ -29,8 +29,8 @@ jobs:
       uses: svenstaro/upload-release-action@v1-release
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ./target/sctc_enc-1.0-SNAPSHOT.jar
-        asset_name: sctc_enc-1.0-SNAPSHOT.jar
+        file: ./target/sctc_enc-1.0.0.jar
+        asset_name: sctc_enc-1.0.0.jar
         # tag: ${{ github.ref }}
         overwrite: true       
        
