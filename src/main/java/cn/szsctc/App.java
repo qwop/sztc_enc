@@ -11,6 +11,11 @@ import cn.hutool.crypto.symmetric.SymmetricCrypto;
  */
 public class App 
 {
+    private static App app= null;
+    private App() {
+
+    }
+
     public static void main( String[] args )
     {
         String content = "test中文";
@@ -32,5 +37,16 @@ public class App
         String decryptStr = aes.decryptStr(encryptHex, CharsetUtil.CHARSET_UTF_8);
 
         System.out.println( decryptStr );
+    }
+
+    public static App instance() {
+        if ( null == app ) {
+            synchronized(App.class) {
+                if ( null == app ) {
+                    app = new App();
+                }
+            }
+        }
+        return app;
     }
 }

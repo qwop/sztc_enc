@@ -17,4 +17,11 @@ public class AppTest
     {
         assertTrue( true );
     }
+
+
+    @Test
+    public void testEnc() {
+        App app = App.instance();
+        app.enc( app.key() );
+    }
 }
