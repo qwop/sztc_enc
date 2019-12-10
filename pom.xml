@@ -6,7 +6,6 @@
 
     <groupId>cn.szsctc</groupId>
     <artifactId>sctc_enc</artifactId>
-    <packaging>pom</packaging>
     <version>1.0.0</version>
 
     <name>sztc_enc</name>
