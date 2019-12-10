@@ -52,37 +52,33 @@
             <build>
                 <plugins>
                     <!-- Source插件-->
-<!--                    <plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>2.2.1</version>
+                        <version>3.2.0</version>
                         <executions>
                             <execution>
-                                <phase>package</phase>
+                                <id>attach-sources</id>
                                 <goals>
                                     <goal>jar-no-fork</goal>
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin>-->
+                    </plugin>
                     <!-- Javadoc插件 -->
-<!--                    <plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.9.1</version>
+                        <version>3.1.1</version>
                         <executions>
                             <execution>
                                 <phase>package</phase>
                                 <goals>
                                     <goal>jar</goal>
                                 </goals>
-                                &lt;!&ndash; -Xdoclint:none 是为了避免生成apidoc的时候检查过于严格而报错&ndash;&gt;
-                                <configuration>
-                                    <additionalparam>-Xdoclint:none</additionalparam>
-                                </configuration>
                             </execution>
                         </executions>
-                    </plugin>-->
+                    </plugin>
                     <!-- GPG加密插件 -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -206,7 +202,7 @@
                     </libs>
                     <!-- 对什么东西进行加载，这里仅有classes成功，不可能对配置文件及JSP混淆吧-->
                     <injar>classes</injar>
-                    <!--<outjar>${project.build.finalName}-pg.jar</outjar>-->
+                   <!-- <outjar>${project.build.finalName}-pg.jar</outjar>-->
                     <!-- 输出目录-->
                     <outputDirectory>${project.build.directory}</outputDirectory>
                 </configuration>
