@@ -1,6 +1,6 @@
 # 加密方式
 
-
+ https://szsctc.github.io/sztc_enc/
 
 ## 使用方式
 
