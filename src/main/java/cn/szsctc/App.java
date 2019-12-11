@@ -21,9 +21,9 @@ import java.util.HashMap;
 public class App 
 {
     // 本地测试地址
-    public static final String THIRD_API_URL = "https://localhost:9443/thirdApi";
+    // public static final String THIRD_API_URL = "https://localhost:9443/thirdApi";
     // 正式地址
-//    public static final String THIRD_API_URL = "https://jkjc.szsctc.cn/thirdApi";
+    public static final String THIRD_API_URL = "https://jkjc.szsctc.cn/thirdApi";
 
     private static App app= null;
     private App() {
