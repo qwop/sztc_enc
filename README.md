@@ -8,13 +8,13 @@
 
 1. 引入代码
 
-    ```xml
+```xml
 <dependency>
   <groupId>cn.szsctc</groupId>
   <artifactId>sctc_enc</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.1</version>
 </dependency>
-    ```
+```
 
 
 2 代码调用方式:
