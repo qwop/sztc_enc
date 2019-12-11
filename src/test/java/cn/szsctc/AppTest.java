@@ -26,7 +26,7 @@ public class AppTest
     }
 
 
-    @Test
+//    @Test
     public void testEnc() throws UnsupportedEncodingException {
         App app = App.instance();
         // 原始数据
