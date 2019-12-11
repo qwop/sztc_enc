@@ -6,12 +6,11 @@
 
     <groupId>cn.szsctc</groupId>
     <artifactId>sctc_enc</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <name>sztc_enc</name>
     <url>https://jkjc.szsctc.cn/</url>
     <description>sz sctc enc for monitor device sn</description>
-
 
     <licenses>
         <license>
