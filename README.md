@@ -6,7 +6,17 @@
 
 调用代码的方式:
 
-1. 代码调用方式:
+1. 引入代码
+
+    ```xml
+<dependency>
+  <groupId>cn.szsctc</groupId>
+  <artifactId>sctc_enc</artifactId>
+  <version>1.0.2</version>
+</dependency>
+    ```
+
+2 代码调用方式:
 
     ```java
         App app = App.instance();
