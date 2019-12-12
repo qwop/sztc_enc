@@ -7,6 +7,7 @@
 调用代码的方式:
 
 1. 引入代码
+
 ```xml
 <dependency>
   <groupId>cn.szsctc</groupId>
@@ -17,12 +18,13 @@
 
 
 2. 代码调用方式:
+
 ```java
-App app = App.instance();
-// 原始数据
-byte[] data = "data".getBytes("utf-8");
-// 设备编号获取密钥进行加密
-byte[] encData = app.enc( app.key( "SN001"), data );
+    App app = App.instance();
+    // 原始数据
+    byte[] data = "data".getBytes("utf-8");
+    // 设备编号获取密钥进行加密
+    byte[] encData = app.enc( app.key( "SN001"), data );
 ```
 
 ## 版本更新
