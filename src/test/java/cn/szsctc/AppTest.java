@@ -8,9 +8,13 @@ import cn.hutool.crypto.SecureUtil;
 import cn.hutool.crypto.symmetric.SymmetricAlgorithm;
 import cn.hutool.crypto.symmetric.SymmetricCrypto;
 import cn.szsctc.common.Const;
+import cn.szsctc.model.KeyModel;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 /**
  * Unit test for simple App.
@@ -27,14 +31,14 @@ public class AppTest
     }
 
 
-//    @Test
+    @Test
     public void testEnc() throws UnsupportedEncodingException {
         App app = App.instance();
         // 原始数据
         byte[] data = "data".getBytes("utf-8");
         // 设备编号获取密钥进行加密
-//        byte[] encData = app.enc( app.key( "CYX-184005"), data );
-        byte[] encData = app.enc( app.key( "LRK001"), data );
+        byte[] encData = app.enc( app.key( "CYX-184005"), data );
+//        byte[] encData = app.enc( app.key( "LRK001"), data );
     }
 
     @Test
@@ -62,5 +66,21 @@ public class AppTest
         //解密为字符串
         String decryptStr = aes.decryptStr(encryptHex, CharsetUtil.CHARSET_UTF_8);
         System.out.println( decryptStr );
+    }
+
+    @Test
+    public void testDec() throws IOException {
+        App app = App.instance();
+        // 原始数据
+        byte[] data = "data".getBytes("utf-8");
+        KeyModel key = app.key("CYX-184005");
+        System.out.println( "密钥:" + key.getKeyStr());
+        //构建
+        SymmetricCrypto aes = new SymmetricCrypto(SymmetricAlgorithm.AES, key.getKey());
+        String userDir = System.getProperty("user.dir");
+        byte[] encrypt = Files.readAllBytes(Paths.get(userDir, "CYX-184005-ENC.txt"));
+        //解密
+        byte[] decrypt = aes.decrypt(encrypt);
+        System.out.println( new String( decrypt, CharsetUtil.CHARSET_UTF_8) );
     }
 }
