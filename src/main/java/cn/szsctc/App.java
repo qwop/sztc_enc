@@ -1,5 +1,7 @@
 package cn.szsctc;
 
+import cn.hutool.core.codec.Base64;
+import cn.hutool.core.util.CharsetUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.symmetric.SymmetricAlgorithm;
 import cn.hutool.crypto.symmetric.SymmetricCrypto;
@@ -18,10 +20,10 @@ import java.util.HashMap;
  * Aes加密方式
  * @author indiff
  */
-public class App 
+public class App
 {
     // 本地测试地址
-    // public static final String THIRD_API_URL = "https://localhost:9443/thirdApi";
+//     public static final String THIRD_API_URL = "https://localhost:9443/thirdApi";
     // 正式地址
     public static final String THIRD_API_URL = "https://jkjc.szsctc.cn/thirdApi";
 
@@ -71,9 +73,12 @@ public class App
                             StrUtil.isNotEmpty(dklContent)
                     ) {
                         KeyModel keyModel = new KeyModel();
-                        keyModel.setKey(dklContent.getBytes(Const.DEFAULT_CHARSET));
+//                        byte[] bytes = dklContent.getBytes(CharsetUtil.CHARSET_UTF_8);
+                        byte[] bytes = Base64.decode(dklContent);
+                        keyModel.setKey(bytes);
                         keyModel.setKeyStr(dklContent);
                         keyModel.setSn(sn);
+//                        System.out.println(StrUtil.format( "密钥生成成功:长度 {} 密钥 {} ", bytes.length,  dklContent ));;
                         return keyModel;
                     }
                 }
@@ -94,6 +99,7 @@ public class App
         if ( key == null ) {
             return null;
         }
+        //构建 加密
         SymmetricCrypto aes = new SymmetricCrypto(SymmetricAlgorithm.AES, key.getKey());
         byte[] encrypt = aes.encrypt(content);
         return encrypt;
@@ -109,11 +115,7 @@ public class App
     public String encStr(KeyModel key, byte[] content) {
         byte[] enc = enc(key, content);
         if ( null != enc ) {
-            try {
-                return new String(enc, Const.DEFAULT_CHARSET);
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
+            return new String(enc, CharsetUtil.CHARSET_UTF_8 );
         }
         return "";
     }

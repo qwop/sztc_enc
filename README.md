@@ -12,12 +12,12 @@
 <dependency>
   <groupId>cn.szsctc</groupId>
   <artifactId>sctc_enc</artifactId>
-  <version>1.0.3/version>
+  <version>1.0.4</version>
 </dependency>
 ```
 
 
-2 代码调用方式:
+2. 代码调用方式:
 
     ```java
         App app = App.instance();
@@ -29,6 +29,8 @@
 
 ## 版本更新
 
+- 1.0.4 base64传输密钥
+- 1.0.3 服务端记录数据
 - 1.0.2 同步到服务端数据
 - 1.0.1 添加设备密钥
 - 1.0.0 同步到中央仓库
