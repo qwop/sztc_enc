@@ -33,14 +33,14 @@ jobs:
        restore-keys: |
         ${{ runner.os }}-maven-
     - name: maven进行打包  
-	if: github.event_name == 'push' && github.ref == 'refs/heads/master'  # && matrix.java_version == '1.8'
-	env:
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'  # && matrix.java_version == '1.8'
+      env:
           GPG_KEY: ${{ secrets.GPG_KEY }}
           GPG_KEY_NAME: ${{ secrets.GPG_KEY_NAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
-        run: |
+      run: |
           export GPG_TTY=$(tty)
           export DISPLAY=:0
           gpg --version
