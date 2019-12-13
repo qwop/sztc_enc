@@ -32,8 +32,8 @@ jobs:
        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
        restore-keys: |
         ${{ runner.os }}-maven-
-    - name: maven进行打包
-	  if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.java_version == '1.8'
+    - name: maven进行打包  
+	  if: github.event_name == 'push' && github.ref == 'refs/heads/master'  # && matrix.java_version == '1.8'
 	  env:
         GPG_KEY: ${{ secrets.GPG_KEY }}
         GPG_KEY_NAME: ${{ secrets.GPG_KEY_NAME }}
