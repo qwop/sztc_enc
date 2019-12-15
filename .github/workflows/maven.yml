@@ -46,7 +46,8 @@ jobs:
           gpg --version
           echo "$GPG_KEY" | base64 --decode --ignore-garbage | gpg --batch --fast-import -
           echo "test" | gpg --batch --clearsign --pinentry-mode loopback || true
-          mvn --settings sonatype-settings.xml -DskipTests -Prelease deploy --batch-mode -Dsytle.colors=always --errors
+          #mvn --settings sonatype-settings.xml -DskipTests -Prelease deploy --batch-mode -Dsytle.colors=always --errors
+          mvn --settings sonatype-settings.xml -DskipTests -Prelease package --batch-mode -Dsytle.colors=always --errors
           rm -rf ~/.gnupg
     - name: 上传发布文件
       uses: docker://softprops/action-gh-release
