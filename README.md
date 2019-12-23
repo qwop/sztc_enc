@@ -1,4 +1,4 @@
-# 加密方式
+# 加密方式  sz sctc enc for monitor device sn
 
  https://szsctc.github.io/sztc_enc/
 
