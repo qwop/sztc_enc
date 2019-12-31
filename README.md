@@ -1,4 +1,4 @@
-# 加密方式
+# 加密方式  sz sctc enc for monitor device sn
 
  https://szsctc.github.io/sztc_enc/
 
@@ -6,7 +6,7 @@
 
 调用代码的方式:
 
-1. 引入代码
+*  引入代码
 
 ```xml
 <dependency>
@@ -17,7 +17,7 @@
 ```
 
 
-2. 代码调用方式:
+* 代码调用方式:
 
     ```java
     App app = App.instance();
