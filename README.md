@@ -12,13 +12,14 @@
 <dependency>
   <groupId>cn.szsctc</groupId>
   <artifactId>sctc_enc</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6</version>
 </dependency>
 ```
 
 ```xml
-implementation 'cn.szsctc:sctc_enc:1.0.5'
+implementation 'cn.szsctc:sctc_enc:1.0.6'
 ```
+
 * 代码调用方式:
 
     ```java
@@ -31,6 +32,7 @@ implementation 'cn.szsctc:sctc_enc:1.0.5'
 
 ## 版本更新
 
+- 1.0.6 change hutools  4.6.13
 - 1.0.5 编译1.7版本
 - 1.0.4 base64传输密钥
 - 1.0.3 服务端记录数据

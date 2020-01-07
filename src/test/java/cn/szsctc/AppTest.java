@@ -72,12 +72,14 @@ public class AppTest
     public void testDec() throws IOException {
         App app = App.instance();
         // 原始数据
-        KeyModel key = app.key("CYX-184005");
+        KeyModel key = app.key("CX-3E-9016");
+//        KeyModel key = app.key("CYX-184005");
         System.out.println( "密钥:" + key.getKeyStr());
         //构建
         SymmetricCrypto aes = new SymmetricCrypto(SymmetricAlgorithm.AES, key.getKey());
         String userDir = System.getProperty("user.dir");
-        byte[] encrypt = Files.readAllBytes(Paths.get(userDir, "14标星塘街站-20191212170831.txt"));
+//        byte[] encrypt = Files.readAllBytes(Paths.get(userDir, "14标星塘街站-20191212170831.txt"));
+        byte[] encrypt = Files.readAllBytes(Paths.get(userDir, "SZDATA20191230184459.txt"));
 //        byte[] encrypt = Files.readAllBytes(Paths.get(userDir, "CYX-184005-ENC.txt"));
         //解密
         byte[] decrypt = aes.decrypt(encrypt);
