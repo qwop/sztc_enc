@@ -12,11 +12,13 @@
 <dependency>
   <groupId>cn.szsctc</groupId>
   <artifactId>sctc_enc</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.5</version>
 </dependency>
 ```
 
-
+```xml
+implementation 'cn.szsctc:sctc_enc:1.0.4'
+```
 * 代码调用方式:
 
     ```java
