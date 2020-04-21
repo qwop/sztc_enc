@@ -6,7 +6,7 @@
 
 调用代码的方式:
 
-*  引入代码
+*  Maven和Gradle引入库
 
 ```xml
 <dependency>
